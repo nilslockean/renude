@@ -266,9 +266,39 @@
           data-base-url="{{ shop.url }}{{ routes.root_url }}"
         >
         </div>
+        
+        <div class="product-single__description rte">
+          <strong>Pre-made NUDE.</strong> Handmade and sculpted with air-drying clay,
+          with a core of previously loved vases/pots. Hand painted and varnished with
+          acrylics. Wanna know how to care for this beauty?
+          Check out <a href="#">care & use</a>!
+        </div>
+
+        <div class="product-collection__links rte">
+          <strong>Style:</strong>
+          {% for collection in product.collections %}
+            <a href="{{ collection.url }}">{{ collection.title }}</a>
+            {%- if forloop.last == false -%}, {% endif %}
+          {% endfor %}
+          <br />
+          <strong>Dimensions:</strong>
+          {{ product.description }}
+        </div>
+        
+        <div class="product-single__description rte">
+          
+        </div>
+
+        <div class="product-collection__description rte">
+          {{ product.collections.first.description }}
+        </div>
 
         <div class="product-single__description rte">
-          {{ product.description }}
+          <strong>Product images are not colour corrected</strong>, however,
+          the true colour of the product is difficult to reflect as color
+          rendering may vary from one screen to another. The same applies to
+          the size of the product, therefore, you should always refer to the
+          dimensions above.
         </div>
 
         {% if section.settings.show_share_buttons %}
