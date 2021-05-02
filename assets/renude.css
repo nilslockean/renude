@@ -1,0 +1,41 @@
+#shopify-section-hero-1 [data-layout="renude"] .hero__inner {
+    top: 130px;
+}
+
+#shopify-section-hero-1 [data-layout="renude"] .hero__inner .page-width {
+    padding: 0;
+    margin: 22px;
+    padding: 22px;
+    background: var(--color-text-field);
+    border-radius: 1em;
+}
+
+#shopify-section-hero-1 [data-layout="renude"] .mega-subtitle,
+#shopify-section-hero-1 [data-layout="renude"] .mega-title {
+    text-shadow: none;
+}
+
+.template-index .section-header h2 {
+    font-size: calc(((var(--font-h2-desktop))/ (var(--font-size-base))) * 1.25em);
+    text-transform: none;
+    letter-spacing: 0.05em;
+}
+
+.template-index .grid--uniform .grid__item.medium-up--one-third.text-center .h4 {
+    font-size: calc(((var(--font-h4-desktop))/ (var(--font-size-base))) * 1.25em);
+}
+
+#shopify-section-16169388402cc6dc94 h2:after {
+    content: "\261E";
+    transform: rotate(90deg);
+    display: inline-block;
+    font-size: 150%;
+}
+
+/* Köp-knappar på produktsidorna */
+.btn, .shopify-payment-button .shopify-payment-button__button--unbranded {
+    font-family: var(--font-stack-body);
+    font-style: var(--font-style-body);
+    font-weight: bold;
+    letter-spacing: 0;
+}
