@@ -1,0 +1,21 @@
+{
+  "name": "renude",
+  "version": "0.0.1",
+  "description": "Customized Shopify theme for RE:NUDE",
+  "main": "index.js",
+  "scripts": {
+    "install": "brew tap shopify/shopify && brew install themekit",
+    "start": "theme watch --allow-live",
+    "build": "theme deploy --allow-live"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nilslockean/renude.git"
+  },
+  "author": "Nils Lockean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nilslockean/renude/issues"
+  },
+  "homepage": "https://github.com/nilslockean/renude#readme"
+}
