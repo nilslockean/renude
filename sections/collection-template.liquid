@@ -138,8 +138,12 @@
       {% endcase %}
 
       <ul class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
-        {% for product in collection.products %}
-          <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+        {%- assign available_products = collection.products | where: "available" -%}
+        {%- assign sold_products = collection.products | where: "available", false -%}
+        {%- assign sorted_products = available_products | concat: sold_products -%}
+        
+        {% for product in sorted_products %}
+          <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}" data-test="nils">
             {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
           </li>
         {% else %}
