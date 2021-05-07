@@ -6,7 +6,8 @@
   "scripts": {
     "install": "brew tap shopify/shopify && brew install themekit",
     "start": "COMMAND=watch node rc.js",
-    "build": "COMMAND=deploy node rc.js"
+    "build": "COMMAND=deploy node rc.js",
+    "version": "npx auto-changelog -p -t keepachangelog && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/nilslockean/renude#readme",
   "devDependencies": {
+    "auto-changelog": "^2.2.1",
     "dotenv": "^9.0.0",
     "shelljs": "^0.8.4"
   }
