@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "install": "brew tap shopify/shopify && brew install themekit",
-    "start": "theme watch --allow-live",
-    "build": "theme deploy --allow-live"
+    "start": "COMMAND=watch node rc.js",
+    "build": "COMMAND=deploy node rc.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/nilslockean/renude/issues"
   },
-  "homepage": "https://github.com/nilslockean/renude#readme"
+  "homepage": "https://github.com/nilslockean/renude#readme",
+  "devDependencies": {
+    "dotenv": "^9.0.0",
+    "shelljs": "^0.8.4"
+  }
 }

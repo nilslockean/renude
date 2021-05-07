@@ -3,6 +3,7 @@ nanoc/
 .env
 tags
 .DS_Store
+node_modules
 
 # for testing
 coverage.out
