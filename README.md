@@ -1,4 +1,4 @@
-# RENEWED RE:NUDE
+# RE:NUDE Renewed
 
 A Shopify Debut child theme for Swedish boobpot maker [RE:NUDE](https://renudes.se/).
 
