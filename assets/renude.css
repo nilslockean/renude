@@ -17,6 +17,7 @@
     }
 }
 
+.site-header__logo.h2,
 .template-index .section-header h2 {
     font-size: calc(((var(--font-h2-desktop))/ (var(--font-size-base))) * 1.25em);
     text-transform: none;
