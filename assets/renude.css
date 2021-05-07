@@ -42,3 +42,38 @@
     font-weight: bold;
     letter-spacing: 0;
 }
+
+.site-nav__link.btn:focus .site-nav__label,
+.site-nav__link.btn:not([disabled]):hover .site-nav__label {
+    border-bottom-width: 0;
+}
+
+.collection-header > .collection-description.rte {
+    margin-bottom: 35px;
+}
+
+
+.collection-grid-item__overlay {
+    border: .67rem solid white;
+    transition: border .2s;
+}
+
+a.collection-grid-item__link:active .collection-grid-item__overlay,
+a.collection-grid-item__link:hover .collection-grid-item__overlay {
+    border-width: 0;
+}
+
+.collection-grid-item__title {
+    top: auto;
+    bottom: 0;
+    margin-bottom: 0;
+    background: white;
+    text-shadow: none;
+    padding: 15px !important;
+    transform: none;
+}
+
+.collection-grid-item__link:focus .collection-grid-item__title-wrapper::before,
+.collection-grid-item__link:hover .collection-grid-item__title-wrapper::before {
+    opacity: 0;
+}
