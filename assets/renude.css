@@ -77,3 +77,8 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
 .collection-grid-item__link:hover .collection-grid-item__title-wrapper::before {
     opacity: 0;
 }
+
+#insta-feed,
+.site-footer {
+    margin-top: 0;
+}
