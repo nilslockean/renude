@@ -1,22 +1,3 @@
-@media (max-width: 500px) {
-    #shopify-section-hero-1 [data-layout="renude"] .hero__inner {
-        top: 130px;
-    }
-
-    #shopify-section-hero-1 [data-layout="renude"] .hero__inner .page-width {
-        padding: 0;
-        margin: 22px;
-        padding: 22px;
-        background: var(--color-text-field);
-        border-radius: 1em;
-    }
-
-    #shopify-section-hero-1 [data-layout="renude"] .mega-subtitle,
-    #shopify-section-hero-1 [data-layout="renude"] .mega-title {
-        text-shadow: none;
-    }
-}
-
 .site-header__logo.h2,
 .template-index .section-header h2 {
     text-transform: none;
@@ -90,14 +71,81 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
     margin-top: 0;
 }
 
-#FeatureRowImageWrapper-feature-row img {
-    --border-width: 1.5rem;
+.hero[data-layout="renude"] {
+    background-image: none !important;
+    display: flex;
+    flex-flow: column-reverse;
+    flex-wrap: nowrap;
+    height: auto;
+}
+.hero[data-layout="renude"]:after {
+    display: none;
+}
+
+.hero[data-layout="renude"] > * {
+    flex-grow: 1;
+    height: auto;
+}
+
+.hero[data-layout="renude"] .hero__inner {
+    --border-width: 1rem;
     border-image-source: var(--border-image);
     border-image-repeat: round;
-    border-top: var(--border-width) solid #fff;
     border-image-width: var(--border-width);
-    border-image-slice: 0 50%;
-    border-bottom: var(--border-width) solid white;
-    border-left: var(--border-width) solid #fff;
+    border-image-slice: 50% 0;
+    border-image-outset: 1;
+    border-top: var(--border-width) solid #fff;
     border-right: var(--border-width) solid #fff;
+    border-bottom: var(--border-width) solid #fff;
+    border-left: var(--border-width) solid #fff;
+    background: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.hero[data-layout="renude"] .mega-subtitle,
+.hero[data-layout="renude"] .mega-title {
+    text-shadow: none;
+}
+
+.hero[data-layout="renude"] .hero__btn {
+    margin-top: 1rem;
+}
+
+.hero[data-layout="renude"] picture {
+    display: block !important;
+    position: initial;
+}
+.hero[data-layout="renude"] picture img {
+    display: block;
+}
+
+@media (min-width: 750px) {
+    .hero[data-layout="renude"] .hero__inner-image {
+        --border-width: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero[data-layout="renude"] {
+        flex-flow: row;
+    }
+    .hero[data-layout="renude"] .hero__inner {
+        border: none;
+        text-align: left;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        background: var(--svg-bg-image) no-repeat right center transparent; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        margin-right: -150px;
+        padding-right: 100px;
+    }
+    .hero[data-layout="renude"] picture img {
+        height: 100%;
+        width: 100%;
+    }
 }
