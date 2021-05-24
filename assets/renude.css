@@ -149,3 +149,18 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
         width: 100%;
     }
 }
+
+.js-mobile-nav-toggle {
+    display: none;
+}
+
+#InlineMobileNav {
+    border-top: 1px solid var(--color-border);
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+#InlineMobileNav ul {
+    margin: .5rem 1rem;
+    text-align: left;
+}
