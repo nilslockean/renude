@@ -90,7 +90,7 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
 .hero[data-layout="renude"] .hero__inner {
     --border-width: 1rem;
     border-image-source: var(--border-image);
-    border-image-repeat: round;
+    border-image-repeat: repeat;
     border-image-width: var(--border-width);
     border-image-slice: 50% 0;
     border-image-outset: 1;
