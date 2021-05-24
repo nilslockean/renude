@@ -98,6 +98,8 @@
     --font-rich-text-large: {{ settings.type_base_size | times: 1.15 | floor }};
     --font-rich-text-small: {{ settings.type_base_size | times: 0.88 | floor }};
 
+    --border-image: url({{ "full-circle.svg" | asset_url }});
+
     {% comment %} Create an appropriate poster background color based on background color and brightness {% endcomment %}
     {%- assign color_body_bg = settings.color_body_bg -%}
     {%- assign color_body_bg_brightness = color_body_bg | color_brightness -%}
