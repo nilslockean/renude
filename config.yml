@@ -1,3 +1,10 @@
 development:
   theme_id: "121241895094"
   store: re-nudes-dev.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+    - config/settings_schema.json
+production:
+  ignore_files:
+    - config/settings_data.json
+    - config/settings_schema.json
