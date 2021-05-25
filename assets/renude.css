@@ -164,3 +164,18 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
     margin: .5rem 1rem;
     text-align: left;
 }
+
+summary {
+    display: list-item;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.faq-article h2 {
+    margin: 0;
+}
+
+.faq-article .content {
+    margin: 0.5rem 0 1rem;
+}

@@ -11,11 +11,7 @@
         </div>
       {% endif %}
 
-      {% if pages.faq.content.size > 0 %}
-        <div class="faq rte">
-          {{ pages.faq.content | replace: '<h2>', '<h3 class="h4">' | replace: '</h2>', '</h3>' }}
-        </div>
-      {% endif %}
+      {% section 'faq' %}
 
       <div class="contact-form form-vertical">
         {%- assign formId = 'ContactForm' -%}

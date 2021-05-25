@@ -1,0 +1,84 @@
+
+{% if section.settings.title != blank and template != 'page.faq' %}
+  <h2>{{ section.settings.title | escape }}</h2>
+{% endif %}
+
+{% for block in section.blocks %}
+  <article class="faq-article" id="faq-article-{{ forloop.index }}">
+    {% if template == 'page.faq' %}
+      {% if block.settings.title != blank %}
+        <h2>{{ block.settings.title | escape }}</h3>
+      {% endif %}
+      {% if block.settings.text != blank %}
+        <div class="content">{{ block.settings.text }}</div>
+      {% endif %}
+    {% else %}
+      <details>
+        <summary>
+          {% if block.settings.title != blank %}
+            {{ block.settings.title | escape }}
+          {% endif %}
+        </summary>
+        {% if block.settings.text != blank %}
+          <div class="content">{{ block.settings.text }}</div>
+        {% endif %}
+      </details>
+    {% endif %}
+  </article>
+{% endfor %}
+
+{% if section.blocks.size == 0 %}
+  {% include 'no-blocks' %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Ofta ställda frågor",
+  "class": "faq-section rte",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Rubrik",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Fråga",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Fråga",
+          "default": "Lägg till en fråga"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Svar",
+          "default": "<p>Svara på frågan</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ofta ställda frågor",
+      "category": "RE:NUDE",
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
