@@ -1,0 +1,32 @@
+<h2 class="h3">{{ section.settings.section_title | escape }}</h2>
+{% if section.settings.text != blank %}
+   {{ section.settings.text }}
+{% endif %}
+  
+{% schema %}
+  {
+    "name": "Kontaktuppgifter",
+    "class": "rte",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Rubrik",
+        "default": "Dina kontaktuppgifter"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Uppgifter såsom adress och organisationsnummer visas under kontaktformuläret.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Kontaktuppgifter",
+        "category": "RE:NUDE"
+      }
+    ]
+  }
+{% endschema %}
+  
