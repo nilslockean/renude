@@ -11,8 +11,11 @@
         </div>
       {% endif %}
 
-      {% section 'faq' %}
-      
+      <div class="contact-page-columns">
+        {% section 'faq' %}
+        {% section 'contact-info' %}
+      </div>
+
       <div class="contact-form form-vertical">
         {%- assign formId = 'ContactForm' -%}
         {% form 'contact', id: formId %}
@@ -59,8 +62,6 @@
 
         {% endform %}
       </div>
-
-      {% section 'contact-info' %}
     </div>
   </div>
 </div>
