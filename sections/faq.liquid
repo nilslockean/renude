@@ -1,13 +1,13 @@
 
 {% if section.settings.title != blank and template != 'page.faq' %}
-  <h2>{{ section.settings.title | escape }}</h2>
+  <h2 class="h3">{{ section.settings.title | escape }}</h2>
 {% endif %}
 
 {% for block in section.blocks %}
   <article class="faq-article" id="faq-article-{{ forloop.index }}">
     {% if template == 'page.faq' %}
       {% if block.settings.title != blank %}
-        <h2>{{ block.settings.title | escape }}</h3>
+        <h2 class="h3 title">{{ block.settings.title | escape }}</h3>
       {% endif %}
       {% if block.settings.text != blank %}
         <div class="content">{{ block.settings.text }}</div>

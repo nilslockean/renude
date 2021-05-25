@@ -172,7 +172,7 @@ summary {
     cursor: pointer;
 }
 
-.faq-article h2 {
+.faq-article .title {
     margin: 0;
 }
 
