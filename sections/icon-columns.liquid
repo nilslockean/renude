@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <defs>
+        <style>
+            .cls-2 {
+                fill: #c21;
+            }
+        </style>
+    </defs>
+
+    <symbol id="stylish" viewBox="0 0 78 180">
+        <g id="Icons" transform="translate(0 -0.001)">
+            <g id="Group_2" data-name="Group 2" transform="translate(0 0.001)">
+                <path id="Path_4" data-name="Path 4" class="cls-2" d="M10.668,25.3C10.162,31.584-.515,51.2.019,52.274s5.4,0,12.067-2.374c-.174,6.042-5.749,20.038-4.849,21.478s12.252.726,18.373-9.631c-.169,3.882-4.129,9.085-2.863,10.711s10.7-1.114,15.926-8.438c-.118,5.625-3.488,11.858-1.868,13.3s23.4-4.68,21.23-25.061c0,0-.135,19.115,1.659,20.2s25.854-10.379,15.346-50.3Z" transform="translate(0 102.477)"/>
+                <path id="Path_5" data-name="Path 5" class="cls-2" d="M67.168,117.776c1.6-7.988,4.281-25.241-.917-31.525-2.464-2.981-10.255-3.4-19.5-2.4,0,0,12.775-53.891,13.715-58.358S62.921-1.4,43.176.07c-19.29,1.446-25.061,14.784-25.6,25.241S29.613,86.842,29.613,86.842C18.2,89.52,7.933,93.21,5.317,95.983c-5.53,5.856-3.139,24.645-2.61,28.245ZM33.213,17.379c2.891-4.354,8.162-5.946,11.768-3.55s4.185,7.87,1.294,12.23S38.113,32,34.5,29.6,30.322,21.728,33.213,17.379Z" transform="translate(8.046 -0.001)"/>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="recycled" viewBox="0 0 222 180">
+        <g id="Icons" transform="translate(0 0.001)">
+            <g id="Group_1" data-name="Group 1" transform="translate(0 -0.001)">
+            <path id="Path_2" data-name="Path 2" class="cls-2" d="M59.73,115.562c-14.069-14.519-16.99-36.208-9.64-56.27,13.744,7.059,25.183,12.422,26.021,11.585,2.2-2.2-10.014-65.986-12.761-67S0,28.164,0,30.683c0,.92,9.626,6.692,22.021,13.585C11.626,74.9,17.412,108.883,40.145,132.33c24.63,25.37,62.187,31.273,95.08,18.118l-8.782-28.173C103.412,134.579,76.339,132.676,59.73,115.562Z" transform="translate(0 22.758)"/>
+            <path id="Path_3" data-name="Path 3" class="cls-2" d="M121.455,93.308c2.789-24.817-4.533-49.889-22.505-68.395C76.514,1.786,43.33-5.162,12.728,3.744l13.6,33.017c18.152-3.9,36.574.367,49.073,13.246,9.183,9.474,13.626,22.021,13.557,35.183l.422.311c-14.581-3.287-26.408-5.488-27-4.484-1.585,2.678,26.18,61.4,29.087,61.7s55.28-39.343,54.644-41.779C145.87,100.07,135.15,96.893,121.455,93.308Z" transform="translate(75.355 0.001)"/>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="gift" viewBox="0 0 214 180">
+        <g id="Icons" transform="translate(0 0)">
+            <path id="Path_1" data-name="Path 1" class="cls-2" d="M101.775,180c11.265,0,121.8-56.741,111.046-134.131C207.515,7.635,170.862-7.261,138.774,3.31c-26.208,8.643-35.872,37.307-37.62,37.307-4.471,0-53.037-46.857-90.037,2.776,0,0-26.208,28.677,1.855,74.927C31.973,149.641,96.582,180,101.775,180Z" transform="translate(0 0)"/>
+        </g>
+    </symbol>
+</svg>
+
+<div class="page-width">
+    {% if section.settings.title != blank %}
+      <div class="section-header text-center">
+        <h2>{{ section.settings.title | escape }}</h2>
+      </div>
+    {% endif %}
+  
+    <div class="grid {% unless section.blocks.size == 5 %}grid--uniform{% endunless %} grid--flush-bottom">
+      {%- assign grid_item_width = 'medium-up--one-third' -%}
+      {%- assign max_height = 345 -%}
+      {% case section.blocks.size %}
+        {% when 1 %}
+          {%- assign grid_item_width = 'medium-up--one-half' -%}
+          {%- assign max_height = 530 -%}
+        {% when 2 %}
+          {%- assign grid_item_width = 'medium-up--one-half' -%}
+          {%- assign max_height = 530 -%}
+        {% when 4 %}
+          {%- assign grid_item_width = 'medium-up--one-half' -%}
+          {%- assign max_height = 530 -%}
+      {% endcase %}
+      {% for block in section.blocks %}
+        {% if section.blocks.size == 5 and forloop.index < 3 %}
+          {%- assign column_width = 'medium-up--one-half' -%}
+          {%- assign max_height = 530 -%}
+        {% else %}
+          {%- assign column_width = grid_item_width -%}
+        {% endif %}
+        <div class="grid__item {{ column_width }} text-{{ section.settings.align_text }}" {{ block.shopify_attributes }}>
+          {% if block.settings.enable_image %}
+            {% if block.settings.icon != blank %}
+                <svg class="renude-capicon">
+                    <use xlink:href="#{{ block.settings.icon }}" />
+                </svg>
+            {% else %}
+              <p>
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </p>
+            {% endif %}
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <h3 class="h4">{{ block.settings.title | escape }}</h3>
+          {% endif %}
+          {% if block.settings.text != blank %}
+            <div class="rte-setting">{{ block.settings.text }}</div>
+          {% endif %}
+  
+          {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+            {%- capture ariaLabel -%}
+              {{- block.settings.button_label -}}
+              {%- if block.settings.button_link.type == 'frontpage_link' -%}
+                : {{ 'homepage.general.title' | t -}}
+              {%- elsif block.settings.button_link.type == 'catalog_link' -%}
+                : {{ 'collections.catalog.title' | t -}}
+              {%- elsif block.settings.button_link.object.title -%}
+                : {{ block.settings.button_link.object.title -}}
+              {%- endif -%}
+            {%- endcapture -%}
+  
+            <a href="{{ block.settings.button_link }}"
+              class="btn btn--secondary btn--small"
+              aria-label="{{ ariaLabel | escape }}">
+              {{- block.settings.button_label | escape -}}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  
+    {% if section.blocks.size == 0 %}
+      {% include 'no-blocks' %}
+    {% endif %}
+  </div>
+  
+  
+  
+  {% schema %}
+  {
+    "name": "Textkolumner med ikoner",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Rubrik",
+        "default": "Textkolumner med ikoner"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Textjustering",
+        "default": "center",
+        "options": [
+          {
+            "value": "left",
+            "label": "Vänster"
+          },
+          {
+            "value": "center",
+            "label": "Centrerad"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Kolumn",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Visa ikon",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Ikon",
+            "default": "stylish",
+            "options": [
+              {
+                "value": "stylish",
+                "label": "Pensel"
+              },
+              {
+                "value": "recycled",
+                "label": "Återvinning"
+              },
+              {
+                "value": "gift",
+                "label": "Hjärta"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Rubrik",
+            "default": "Lägg till en titel eller tagline"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Dela blogginlägg, produkter eller kampanjer med dina kunder. Använd den här texten för att beskriva produkter, dela information om tillgänglighet och stil eller som ett utrymme för att visa senaste recensioner eller vanliga frågor.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Knappetikett"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Knapplänk"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Textkolumner med ikoner",
+        "category": "RE:NUDE",
+        "blocks": [
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}
+  

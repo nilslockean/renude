@@ -193,3 +193,9 @@ summary {
         }
     }
 }
+
+.renude-capicon {
+    height: 100px;
+    width: auto;
+    margin: 1rem 0;
+}
