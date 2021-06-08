@@ -1,6 +1,6 @@
 {
   "name": "renude",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Customized Shopify theme for RE:NUDE",
   "main": "index.js",
   "scripts": {
