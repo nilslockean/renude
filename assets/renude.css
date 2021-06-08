@@ -87,17 +87,30 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
     height: auto;
 }
 
-.hero[data-layout="renude"] .hero__inner {
+[data-border-img] {
     --border-width: 1rem;
     border-image-source: var(--border-image);
+    -webkit-border-image-repeat: repeat;
+    -moz-border-image-repeat: repeat;
+    -o-border-image-repeat: repeat;
     border-image-repeat: repeat;
     border-image-width: var(--border-width);
     border-image-slice: 50% 0;
-    border-image-outset: 1;
+    /* border-image-outset: 0; */
     border-top: var(--border-width) solid #fff;
     border-right: var(--border-width) solid #fff;
     border-bottom: var(--border-width) solid #fff;
     border-left: var(--border-width) solid #fff;
+}
+[data-border-img="x"] {
+    border-image-slice: 0 50%;
+}
+[data-border-img="y"] {
+    border-image-slice: 50% 0;
+}
+
+.hero[data-layout="renude"] .hero__inner {
+    border-image-outset: 1;
     background: white;
     padding: 2rem 0;
     text-align: center;

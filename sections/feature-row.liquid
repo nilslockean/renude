@@ -14,6 +14,9 @@
                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
                  data-aspectratio="{{ section.settings.image.aspect_ratio }}"
                  data-sizes="auto"
+              {% if section.settings.img_styled_border != 'none' %}
+                 data-border-img="{{ section.settings.img_styled_border }}"
+              {% endif %}
                  alt="{{ section.settings.image.alt | escape }}">
           </div>
         </div>
@@ -200,6 +203,26 @@
             "zh-CN": "右侧",
             "zh-TW": "右方"
           }
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "img_styled_border",
+      "label": "Vågig ram",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "Ingen"
+        },
+        {
+          "value": "x",
+          "label": "Höger/vänster"
+        },
+        {
+          "value": "y",
+          "label": "Över/under"
         }
       ]
     },
