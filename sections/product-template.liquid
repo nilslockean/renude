@@ -275,24 +275,30 @@
         </div>
 
         <div class="product-collection__links rte">
-          <strong>Style:</strong>
-          {% for collection in product.collections %}
-            <a href="{{ collection.url }}">{{ collection.title }}</a>
-            {%- if forloop.last == false -%}, {% endif %}
-          {% endfor %}
-          <br />
-          <strong>Dimensions:</strong>
+          {% if product.type.size > 0 %}
+            <strong>Style:</strong>
+            {{  product.type }}
+            <br />
+          {% endif %}
+          <strong style="float: left;">Dimensions:&nbsp;</strong>
           {{ product.description }}
         </div>
+
+        {% if product.collections.size > 0 %}
+          <div class="rte">
+            {% for collection in product.collections %}
+              <details>
+                <summary>{{ collection.title }}</summary>
+                <div class="content">
+                  {{ collection.description }}
+                  <br />
+                  <a href="{{ collection.url }}">Browse {{ collection.title }} Collection</a>
+                </div>
+              </details>
+            {% endfor %}
+          </div>
+        {% endif %}
         
-        <div class="product-single__description rte">
-          
-        </div>
-
-        <div class="product-collection__description rte">
-          {{ product.collections.first.description }}
-        </div>
-
         <div class="product-single__description rte">
           <strong>Product images are not colour corrected</strong>, however,
           the true colour of the product is difficult to reflect as color

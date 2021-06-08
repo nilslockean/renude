@@ -176,7 +176,8 @@ summary {
     margin: 0 0 1rem;
 }
 
-.faq-article .content {
+.faq-article .content,
+details .content {
     margin: 0.5rem 0 1rem;
 }
 
