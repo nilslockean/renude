@@ -213,3 +213,14 @@ details .content {
     width: auto;
     margin: 1rem 0;
 }
+
+.pagination .btn {
+    color: inherit;
+    border-color: inherit;
+}
+
+.pagination .btn:focus,
+.pagination .btn:not([disabled]):hover {
+    color: #222;
+    border-color: #222;
+}
