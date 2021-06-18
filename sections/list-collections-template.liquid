@@ -30,6 +30,9 @@
       {% endcase %}
       {% if section.settings.sort == 'products_low' or section.settings.sort == 'date' or section.settings.sort == 'alphabetical' %}
         {% for collection in collections %}
+          {% if collection.products == empty %}
+            {% continue %}
+          {% endif %}
           <li class="grid__item {{ grid_item_width }}">
             {% include 'collection-grid-item', collection: collection %}
           </li>
