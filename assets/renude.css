@@ -54,6 +54,19 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
     transform: none;
 }
 
+@media (max-width: 900px) {
+    .collection-grid-item__title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .collection-grid-item__title {
+        font-size: 0.8rem;
+        padding: 8px !important;
+    }
+}
+
 .collection-grid-item__link:focus .collection-grid-item__title-wrapper::before,
 .collection-grid-item__link:hover .collection-grid-item__title-wrapper::before {
     opacity: 0;
