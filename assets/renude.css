@@ -155,13 +155,18 @@ a.collection-grid-item__link:hover .collection-grid-item__overlay {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        background: var(--svg-bg-image) no-repeat right center transparent; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        margin-right: -150px;
-        padding-right: 100px;
+        background: white;
+        flex-basis: 80%;
+    }
+    .hero[data-layout="renude"] .hero__inner::after {
+        background: var(--svg-right-after-image) no-repeat left center transparent; 
+        content: "";
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        bottom: 0;
     }
     .hero[data-layout="renude"] picture img {
         height: 100%;
